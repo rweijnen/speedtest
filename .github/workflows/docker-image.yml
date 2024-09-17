@@ -8,7 +8,7 @@ on:
     paths-ignore:
       - README.md      
       - VERSIONS.txt
-      - .github/workflows/test*.yml
+      - .github/workflows/scout-cve-scan.yml
 
 jobs:
   build:
