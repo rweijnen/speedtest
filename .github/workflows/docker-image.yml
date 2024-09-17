@@ -20,7 +20,7 @@ jobs:
       attestations: write
     env:
       REGISTRY: index.docker.io
-      IMAGE_NAME: ${{ env.IMAGE_NAME }}
+      IMAGE_NAME: ${{ env.IMAGE_NAME }}  # Using the image name from the repo settings
 
     steps:
       - name: Checkout repository
@@ -48,6 +48,7 @@ jobs:
           tags: latest
           
       - name: Build and push Docker image
+        id: push
         uses: docker/build-push-action@v6
         with:
           context: .
