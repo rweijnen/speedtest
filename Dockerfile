@@ -14,6 +14,8 @@ RUN apk update && \
     openssl-dev \
     git
 
+RUN apk del --no-cache curl
+
 # Clone the SpeedTest repository
 RUN git clone https://github.com/taganaka/SpeedTest /opt/SpeedTest
 
