@@ -14,8 +14,6 @@ RUN apk update && \
     openssl-dev \
     git
 
-RUN apk del --no-cache curl
-
 # Clone the SpeedTest repository
 RUN git clone https://github.com/taganaka/SpeedTest /opt/SpeedTest
 
@@ -28,6 +26,6 @@ RUN cmake -DCMAKE_BUILD_TYPE=Release . && \
     make install
 
 # Clean up unnecessary files
-RUN
+RUN apk del --no-cache git
 
 ENTRYPOINT ["SpeedTest"]
