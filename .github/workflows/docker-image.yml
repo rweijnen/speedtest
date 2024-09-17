@@ -20,7 +20,7 @@ jobs:
       attestations: write
     env:
       REGISTRY: index.docker.io
-      IMAGE_NAME: rweijnen/speedtest
+      IMAGE_NAME: ${{ env.IMAGE_NAME }}
 
     steps:
       - name: Checkout repository
