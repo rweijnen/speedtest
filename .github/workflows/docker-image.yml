@@ -18,10 +18,10 @@ jobs:
       packages: write
       contents: write
       attestations: write
+    environment: DEFAULT      
     env:
       REGISTRY: index.docker.io
-      IMAGE_NAME: ${{ env.IMAGE_NAME }}  # Using the image name from the repo settings
-
+      IMAGE_NAME: ${{ vars.IMAGE_NAME }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
