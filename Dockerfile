@@ -3,8 +3,9 @@ FROM alpine:latest AS builder
 # Set environment variables for non-interactive apk
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Install build dependencies
+# Update the package list and install dependencies
 RUN apk update && \
+    apk upgrade && \
     apk add --no-cache \
     build-base \
     cmake \
