@@ -4,9 +4,9 @@ FROM alpine:latest AS builder
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Update the package list and install dependencies
-RUN apk update && \
-    apk upgrade && \
-    apk add --no-cache \
+RUN apk -U update && \
+    apk -U upgrade && \
+    apk -U add --no-cache \
     build-base \
     cmake \
     curl-dev \
